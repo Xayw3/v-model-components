@@ -1,30 +1,68 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view />
+  <FirstTask />
+  <SecondTask />
+  <ThirdTask />
+  <FourthTask />
+  <FifthTask />
+  <SixthTask />
+  <SeventhTask />
+  <EighthTask />
 </template>
 
+<script lang="ts">
+import { defineComponent } from "vue";
+import FirstTask from "./components/FirstTask/FirstTask.vue";
+import SecondTask from "./components/SecondTask/SecondTask.vue";
+import ThirdTask from "./components/ThirdTask/ThirdTask.vue";
+import FourthTask from "./components/FourthTask/FourthTask.vue";
+import FifthTask from "./components/FifthTask/FifthTask.vue";
+import SixthTask from "./components/SixthTask/SixthTask.vue";
+import SeventhTask from "./components/SeventhTask/SeventhTask.vue";
+import EighthTask from "./components/EighthTask/EighthTask.vue";
+
+export default defineComponent({
+  name: "HomeView",
+  components: {
+    FirstTask,
+    SecondTask,
+    ThirdTask,
+    FourthTask,
+    FifthTask,
+    SixthTask,
+    SeventhTask,
+    EighthTask,
+  },
+});
+</script>
+
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+.box {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #333;
+  background-color: red;
 }
 
-nav {
-  padding: 30px;
+.hidden {
+  visibility: hidden;
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+.wrapper {
+  max-width: 800px;
+  border: 1px solid #333;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  justify-content: space-between;
+  margin: 15px;
+}
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+.wrapper-column {
+  flex-direction: column;
+  gap: 5px;
+}
+
+.margin-right {
+  margin-right: 15px;
 }
 </style>
